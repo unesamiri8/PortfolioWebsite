@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: #d9dcdf;
+  font-family: "outfit";
+  font-weight: 200;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+#p1 {
+  position: relative;
+  height: 100vh;
+}
+.p1Middle {
+  display: grid;
+  place-items: center;
+}
+.circleTop {
+  top:0;
+  left:0;
+  position: absolute;
+  z-index: -99;
+}
+.circleBottom {
+  display: none;
+  position: absolute;
+  z-index: -99;
+  right: 0;
+  bottom: 0;
+}
+
+.p1Header {
+  font-size: 35vw;
+  font-weight: 800;
+  color: #1e1e1e;
+  text-transform: uppercase;
+  margin-top: 50px;
+  line-height: 80%;
+  text-align: center;
+  z-index: -1;
+}
+
+.p1Image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-position: center;
+  left:0;
+  z-index:-1;
+}
+
+@media only screen and (min-height: 850px) {
+  .circleBottom {
+    display: block;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .p1Image {
+    width: 80%;
+    place-self: center;
+    margin-left: 10%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .p1Image {
+    width: 45%;
+    margin-left: 25%;
+  }
+}
+#p2 {
+  height: 100vh;
+  background-color: #141414;
+  margin: 0;
+  display: grid;
+  grid-template:
+    "p2Header" 30%
+    "p2Image" auto
+    / auto;
+  color: white;
+  justify-items: center;
+  position: relative;
+  place-items: center;
+}
+.p2Header {
+  grid-area: p2Header;
+  z-index: 9999;
+}
+.p2Header span {
+  font-size: 70px;
+  display: block;
+  font-weight: 800;
+  z-index: 9999;
+  cursor: pointer;
+}
+.p2Header span:not(.p2HItem1) {
+  opacity: 60%;
+}
+.p2Image {
+  grid-area: p2Image;
+  width: 38vh;
+  border-radius: 10px;
+  z-index: 1;
+}
+.p2Shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.p2Para {
+  display: none;
+  z-index: 99;
+  opacity: 60%;
+}
+.p2Header span:hover {
+  opacity: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .p2Header span {
+    font-size: 85px;
+  }
+  #p2 {
+    grid-template:
+      ". p2Header" 40%
+      ". p2Image" auto
+      / 10% auto;
+    justify-items: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .p2Header span {
+    font-size: 7vw;
+  }
+  .p2Para {
+    display: block;
+    grid-area: p2Para;
+    align-self: start;
+  }
+  #p2 {
+    grid-template:
+      ". . . . ." 20%
+      ". p2Header . p2Image ." auto
+      ". p2Para . p2Image ." auto
+      " . . . p2Image ." 40%
+      /10% auto 5% auto 5%;
+    place-items: start;
+  }
+}
+
+.p3Para {
+  grid-area: p3Para;
+  font-weight: 100;
+  font-size: 20px;
+}
+.p3Image {
+  width: 100%;
+  grid-area: p3Image;
+  z-index: 2;
+}
+
+.p3Circle {
+  border-radius: 99px;
+  border: 1px solid black;
+  padding: 50px 10px;
+  font-size: 4vw;
+  grid-area: p3Circle;
+}
+hr {
+  border: 1px dashed black;
+}
+.p3Down h5 {
+  grid-area: header;
+  font-weight: 600;
+  font-size: 6vw;
+}
+.p3Down a {
+  grid-area: forward;
+  font-weight: 100;
+  font-size: 4vw;
+}
+.forwardIcon {
+  font-size: 4vw;
+  color: rgb(99, 99, 99);
+}
+.p3Down {
+  display: grid;
+  grid-template:
+    "header" 50%
+    "forward" auto
+    / auto;
+  place-items: center;
+}
+.p3Code {
+  grid-area: p3Code;
+  place-self: stretch;
+  z-index: 2;
+}
+.p3Design {
+  grid-area: p3Design;
+  place-self: stretch;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.525);
+}
+.p3Code,
+.p3Design {
+  border-top: 1px dashed rgba(0, 0, 0, 0.525);
+}
+#p3 {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    ". p3Para p3Para ." 30%
+    ". p3Circle p3Image ." 25%
+    "p3Code p3Code p3Code p3Code" 15%
+    "p3Design p3Design p3Design p3Design" 15%
+    /5% auto auto 5%;
+  place-items: center;
+  margin-top: 100px;
+}
+
+@media only screen and (min-width: 1000px) {
+  #p3 {
+    grid-template:
+      ". p3Para p3Para ." 20%
+      ". p3Circle p3Image ." 25%
+      "p3Code p3Code p3Code p3Code" 25%
+      "p3Design p3Design p3Design p3Design" 25%
+      /5% auto auto 5%;
+      padding-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .p3Image {
+    width: 70%;
+    z-index: 5;
+  }
+  .p3Down h5 {
+    font-size: 4vw;
+  }
+  .p3Down a{
+    font-size: 3vw;
+  }
+}
+
+#p4 {
+  background-color: #141414;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 70px 30px;
+  display: grid;
+  grid-template:
+    "p4Header p4Header" 20%
+    "p4Image p4Icon" auto
+    "p4Para p4Para" 45%
+    / auto auto auto;
+  align-items: center;
+}
+.p4Header {
+  grid-area: p4Header;
+  font-size: 20vw;
+  margin: 0;
+}
+.p4Image {
+  width: 80%;
+  grid-area: p4Image;
+  justify-self: end;
+}
+.p4Icon {
+  grid-area: p4Icon;
+  rotate: -45deg;
+  color: #818181;
+  font-size: 50vw;
+  margin: 0;
+  justify-self: start;
+}
+.p4Para {
+  grid-area: p4Para;
+  font-weight: 100;
+  align-self: start;
+  margin: 50px;
+  text-align: left;
+}
+
+@media only screen and (min-width: 900px) {
+  .p4Image {
+    position: absolute;
+    width: 200px;
+    top:150px;
+    right:150px
+  }
+  #p4 {
+    position: relative;
+    grid-template:
+      ". p4Header p4Header . " 30%
+      ". . . ." 20%
+      ". p4Icon p4Para ." 50%
+      / 10% auto auto 10% ;
+      justify-items: end;
+      overflow: hidden;
+      padding-top:200px;
+  }
+  .p4Header{
+    border-bottom: 1px dashed white;
+  }
+  .p4Icon{
+    font-size: 500px;
+
+  }
+  .p4Para{
+    align-self: start;
+    margin: 30px 20px;
+    font-size: 1.5vw;
+  }  
+}

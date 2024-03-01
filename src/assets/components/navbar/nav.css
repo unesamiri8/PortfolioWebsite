@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+.logo {
+  grid-area: logo;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  justify-self: start;
+}
+.ni {
+  grid-area: ni;
+  font-size: 25px;
+}
+
+
+.nMiddle {
+  grid-area: nMiddle;
+  display: none;
+}
+
+.n4 {
+  grid-area: n4;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+  justify-self: end;
+}
+.logoTitle {
+  grid-area: logoTitle;
+  justify-self: start;
+  font-weight: 400;
+}
+nav {
+  display: grid;
+  background-color: white;
+  max-width: 100%;
+  border-radius: 10px;
+  height: 10vh;
+  grid-template:
+    "logo . n4 ni" auto
+    / 30% auto 40% 5%;
+  text-align: center;
+  place-items: center;
+  padding: 0 20px;
+  column-gap: 5%;
+  margin:20px;
+  z-index: 1000;
+  position: sticky;
+  top:0;
+}
+.n3,
+.n2,
+.n1,
+.logoTitle {
+  display: none;
+}
+/* @media only screen and (max-width:600px){
+
+} */
+@media only screen and (min-width: 600px) {
+  .logoTitle {
+    display: block;
+  }
+  nav {
+    grid-template:
+      "logo logoTitle . n4 ni" auto
+      / 5% 30% auto 30% 5%;
+  }
+ 
+  
+  
+}
+@media only screen and (max-width:1200px){
+  .menu{
+    display: none;
+    background-color: white;
+    height: 100vh;
+    z-index:3;
+  position:sticky;
+  top:0;
+  color:black;
+
+  }
+  .m1{grid-area: m1;}
+  .m2{grid-area: m2;}
+  .m3{grid-area: m3;}
+  .toggle{
+    display: grid;
+    text-align:center;
+    padding:150px 50px;
+    grid-template:
+    "m1"25% 
+    "m2"25%
+    "m3"25%
+    /auto;
+    font-size: 10vw;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .nMiddle {
+    display: block;
+    font-size: 25px;
+  }
+  .nMiddle a {
+    display: inline;
+  }
+  .ni {
+    display: none;
+  }
+  nav {
+    font-weight: 100;
+    font-size: 20px;
+    column-gap: 5px;
+    grid-template:
+      "logo logoTitle . nMiddle . n4" auto
+      / 5% 15% 10% auto 10% 18%;
+  }
+  .n4 {
+    padding: 10px 40px;
+  }
+}
