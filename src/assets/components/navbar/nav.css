@@ -64,9 +64,31 @@ nav {
 .logoTitle {
   display: none;
 }
-/* @media only screen and (max-width:600px){
+.m1{grid-area: m1;}
+.m2{grid-area: m2;}
+.m3{grid-area: m3;}
+.menu{
+  display: none;
+  background-color: white;
+  height: 100vh;
+  z-index:3;
+position:sticky;
+top:0;
+color:black;
+}
+.toggle{
+  display: grid;
+  text-align:center;
+  padding:150px 50px;
+  grid-template:
+  "m1"25% 
+  "m2"25%
+  "m3"25%
+  /auto;
+  font-size: 10vw;
+  font-weight: 400;
+}
 
-} */
 @media only screen and (min-width: 600px) {
   .logoTitle {
     display: block;
@@ -80,34 +102,12 @@ nav {
   
   
 }
-@media only screen and (max-width:1200px){
-  .menu{
-    display: none;
-    background-color: white;
-    height: 100vh;
-    z-index:3;
-  position:sticky;
-  top:0;
-  color:black;
 
-  }
-  .m1{grid-area: m1;}
-  .m2{grid-area: m2;}
-  .m3{grid-area: m3;}
-  .toggle{
-    display: grid;
-    text-align:center;
-    padding:150px 50px;
-    grid-template:
-    "m1"25% 
-    "m2"25%
-    "m3"25%
-    /auto;
-    font-size: 10vw;
-    font-weight: 400;
-  }
-}
 @media only screen and (min-width: 1200px) {
+ .menu{
+  display: none;
+ }
+
   .nMiddle {
     display: block;
     font-size: 25px;
@@ -129,4 +129,9 @@ nav {
   .n4 {
     padding: 10px 40px;
   }
+
+
+
+
+
 }
